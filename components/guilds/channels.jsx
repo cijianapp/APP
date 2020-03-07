@@ -63,7 +63,8 @@ function Channel(props) {
       onPress={() => {
         navigation.navigate("Content", {
           guild_id: props.guild_id,
-          channel_id: props.channel._id
+          channel_id: props.channel._id,
+          title: props.channel.name
         });
       }}
     >

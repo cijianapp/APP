@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, Image, ScrollView, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  ScrollView,
+  StyleSheet,
+  StatusBar
+} from "react-native";
 import { connect } from "react-redux";
 import axios from "axios";
 
@@ -74,6 +81,11 @@ function PostDetail(props) {
 
   return (
     <ScrollView>
+      {/* <StatusBar
+        barStyle="dark-content"
+        translucent
+        backgroundColor="transparent"
+      ></StatusBar> */}
       <View style={styles.container}>
         <View style={styles.infoWrapper}>
           <Image
@@ -113,6 +125,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 8,
+    paddingTop: 20,
     backgroundColor: themeLight.cardBackground,
     elevation: 1,
     alignContent: "center"

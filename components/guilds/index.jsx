@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { View, StyleSheet, Text, FlatList } from "react-native";
+import { View, StyleSheet, Text, FlatList, StatusBar } from "react-native";
 import { connect } from "react-redux";
 import axios from "axios";
 import { Ionicons } from "@expo/vector-icons";
@@ -53,6 +53,11 @@ function Guilds(props) {
 
   return (
     <View style={styles.container}>
+      {/* <StatusBar
+        barStyle="dark-content"
+        translucent
+        backgroundColor="transparent"
+      ></StatusBar> */}
       <View style={styles.guilds}>
         <FlatList
           data={guildList}
@@ -93,12 +98,10 @@ const styles = StyleSheet.create({
   },
   guilds: {
     width: 72,
-    paddingTop: 30,
     backgroundColor: themeLight.backgroundPrimary
   },
   channels: {
     flex: 1,
-    paddingTop: 30,
     backgroundColor: themeLight.backgroundSecondary
   },
   title: {

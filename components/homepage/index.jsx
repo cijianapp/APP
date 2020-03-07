@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, FlatList, Text } from "react-native";
+import { StyleSheet, FlatList, View } from "react-native";
 import { connect } from "react-redux";
 import axios from "axios";
 

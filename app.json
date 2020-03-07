@@ -25,6 +25,10 @@
     "android": {
       "package": "com.cijian.cijian",
       "versionCode": 1
+    },
+    "androidStatusBar": {
+      "barStyle": "dark-content",
+      "backgroundColor": "#ffffff"
     }
   }
 }

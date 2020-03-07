@@ -77,7 +77,7 @@ export const Post = React.memo(function Post(props) {
   return (
     <TouchableHighlight
       onPress={() => {
-        navigation.navigate("Post", { post_id: props.post._id });
+        navigation.navigate("PostDetail", { post_id: props.post._id });
       }}
     >
       <View style={styles.container}>

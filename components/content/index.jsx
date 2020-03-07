@@ -2,12 +2,21 @@ import React, { useState, useEffect } from "react";
 import { View, StyleSheet, FlatList, Text } from "react-native";
 import { connect } from "react-redux";
 import axios from "axios";
+import { Ionicons } from "@expo/vector-icons";
 
 import { baseURL } from "../../utils/http";
 import Post from "../post";
 
 function Content(props) {
   const [posts, setPosts] = useState([]);
+
+  React.useLayoutEffect(() => {
+    props.navigation.setOptions({
+      headerRight: () => (
+        <Ionicons name={"ios-add-circle-outline"} size={24} color="gray" />
+      )
+    });
+  }, [props.navigation]);
 
   useEffect(() => {
     const source = axios.CancelToken.source();
