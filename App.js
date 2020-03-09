@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View } from "react-native";
-import { NavigationContainer, useFocusEffect } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -11,6 +11,8 @@ import Recommend from "./components/recommend";
 import PostDetail from "./components/postDetail";
 import Guilds from "./components/guilds";
 import Content from "./components/content";
+import Submit from "./components/submit";
+import CameraRoll from "./components/cameraRoll";
 
 import { Provider } from "react-redux";
 import store from "./redux/store";
@@ -87,25 +89,17 @@ export default function App() {
             component={MainStackScreen}
             options={{ headerShown: false }}
           />
-          <RootStack.Screen
-            name="Content"
-            component={Content}
-            options={({ route }) => ({
-              title: route.params.title
-            })}
-          />
-          <RootStack.Screen
-            name="PostDetail"
-            component={PostDetail}
-            options={{ headerShown: true }}
-          />
+          <RootStack.Screen name="Content" component={Content} />
+          <RootStack.Screen name="Submit" component={Submit} />
+          <RootStack.Screen name="PostDetail" component={PostDetail} />
+          <RootStack.Screen name="CameraRoll" component={CameraRoll} />
         </RootStack.Navigator>
       </NavigationContainer>
     </Provider>
   );
 }
 
-function SettingsScreen() {
+function SettingsScreen({ navigation }) {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <Text>Settings!</Text>

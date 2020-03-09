@@ -6,14 +6,28 @@ import { Ionicons } from "@expo/vector-icons";
 
 import { baseURL } from "../../utils/http";
 import Post from "../post";
+import { TouchableHighlight } from "react-native-gesture-handler";
 
 function Content(props) {
   const [posts, setPosts] = useState([]);
 
   React.useLayoutEffect(() => {
     props.navigation.setOptions({
+      title: props.route.params.title,
+      headerStyle: { height: 48 },
       headerRight: () => (
-        <Ionicons name={"ios-add-circle-outline"} size={24} color="gray" />
+        <TouchableHighlight
+          onPress={() => {
+            props.navigation.navigate("Submit");
+          }}
+        >
+          <Ionicons
+            style={{ paddingRight: 12 }}
+            name={"ios-add-circle-outline"}
+            size={24}
+            color="gray"
+          />
+        </TouchableHighlight>
       )
     });
   }, [props.navigation]);
